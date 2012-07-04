@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta name="content-language" content="de">
+<title>Handheld_XH - Manual</title>
+<link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+
+<body>
+
+<h1>Handheld_XH - a CMSimple_XH Plugin</h1>
+<img src="../handheld.png" style="display:block; float:left; margin: 0 0 10px 0">
+<p style="text-align:justify">Handheld_XH facilitates automatic detection of mobile browsers (not tablet browsers),
+so you can present them a mobile friendly website by either redirecting them to another site
+or by simply switching to a special template.
+The plugin can also be used by other CMSimple_XH components,
+which want to adapt to mobile browsers.</p>
+
+<ul id="nav">
+<li><a href="#notice">Important Notice</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#settings">Settings</a></li>
+<li><a href="#usage">Usage</a>
+<ul><a href="#usage-api">API</a></ul></li>
+<!--<li><a href="#limitations">Limitations</a></li>-->
+<li><a href="#license">License</a></li>
+<li><a href="#credits">Credits</a></li>
+</ul>
+
+<div id="body">
+
+<p><strong>Please do read this documentation
+<em>before</em> you encounter any problems!</strong></p>
+
+<h2><a name="notice">Important Notice</a></h2>
+<p><strong>Handheld_XH couldn't be tested so far in various environments.
+It is a so called BETA version. Use with caution!</strong></p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="requirements">Requirements</a></h2>
+<p>Handheld_XH is a plugin for CMSimple_XH.
+It requires a UTF-8 encoded version.</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="installation">Installation</a></h2>
+<p>The installation is done as with many other CMSimple_XH plugins.
+See the <a href="http://www.cmsimple-xh.com/wiki/doku.php/manuals:users_manual:plugins:installation">
+CMSimple_XH wiki</a> for further details.</p>
+<ol>
+<li><strong>Backup the data on your server.</strong></li>
+<li>Unzip the distribution on your computer.</li>
+<li>Upload the whole directory handheld/ to your server into CMSimple_XH's plugins directory.</li>
+<li>Set write permissions to the subdirectories config/ and languages/.</li>
+<li><strong>Switch to "Handheld" in the back-end to check if all requirements are fulfilled.</strong></li>
+</ol>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="settings">Settings</a></h2>
+<p>The plugin's configuration is done as with many other
+CMSimple_XH plugins in the website's back-end.
+Select "Handheld" from "Plugins".</p>
+<p>You have to change the default settings of Handheld_XH in "Plugin Config".
+Hints for the options will be displayed
+when hovering over the help icon with your mouse.
+See section <a href="#usage">Usage</a> for details.</p>
+<p>Localization is done in "Plugin Language".
+You can translate the character strings to your own language,
+or customize them according to your needs.</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="usage">Usage</a></h2>
+<p>Handheld_XH has three modes:</p>
+<ol>
+<li><h4>Redirect mobile browsers to another (sub)domain</h4>
+<p>The preferred way to present a really mobile optimized website.
+The (sub)domain can be a minimal CMSimple_XH installation
+or even a small handcrafted website.</p></li>
+<li><h4>Redirect mobile browsers to a CMSimple subsite</h4>
+<p>A compromise solution: this way you can present a different content in a different template,
+but plugins that are not used on the mobile site <em>might</em> increase the network traffic.</p></li>
+<li><h4>Use another template for mobile browsers</h4>
+<p>Probably not the friendliest solution for mobiles,
+but this way you only have to keep one content up to date.</p></li>
+</ol>
+<p>Set the desired mode in the plugin's configuration,
+fill in the appropriate setting
+and create the mobile site resp. the template.
+It's good practise to present your mobile visitors a link to the full site:</p>
+<pre class="code">&lt;a href="http://www.example.com/?&amp;handheld_full=1&gt;view full site (requires cookies enabled)&lt;a&gt;</pre>
+<p>"handheld_full=1" will set a cookie in the visitors browser,
+so he can navigate on the full site without being redirected to the mobile one.
+On the full site you'll want to set a link back to the mobile version:</p>
+<pre class="code">&lt;a href="http://mobile.example.com/?&amp;handheld_full=0&gt;view mobile site&lt;a&gt;</pre>
+<p>After everything is set up, you are strongly encouraged to test it.
+If you don't have a smartphone, there are several possibilites, e.g.
+the <a href="http://www.opera.com/developer/tools/mini/">Opera Mini Simulator</a>,
+the Firefox Addon <a href="https://addons.mozilla.org/de/firefox/addon/user-agent-switcher/">User Agent Switcher</a>
+and the <a href="http://de.opera.com/developer/tools/mobile/">Opera Mobile Emulator</a>.
+Finally you can check your site with the <a href="http://validator.w3.org/mobile/">W3C mobileOK Checker</a>.</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h3><a name="usage-api">API</a></h3>
+<p>Other CMSimple_XH components (plugins/templates/addons)
+can use the browser detection of Handheld_XH to adapt for mobile browsers:</p>
+<pre class="code">include_once $pth['folder']['plugins'].'handheld/handheld.inc.php';
+if (Handheld_detected()) {
+    // take appropriate actions
+}</pre>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<!--<h2><a name="limitations">Limitations</a></h2>
+<div class="toplink"><a href="#">back to top</a></div>
+-->
+<h2><a name="license">License</a></h2>
+<p>Handheld_XH is licensed under
+<a href="http://www.gnu.org/licenses/gpl.html">GPLv3</a>.</p>
+<p>&copy; 2011 Brett Allen<br>
+&copy; 2012 Christoph M. Becker</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="credits">Credits</a></h2>
+<p>Handheld_XH is powered by <a href="http://detectmobilebrowsers.com/">Detect Mobile Browsers</a>.
+Many thanks to Mktg Dept for publishing the mobile detection regex under the Unlicense.</p>
+<p>The plugin icon is designed by <a href="http://pierocksmysocks.deviantart.com/">pierocksmysocks</a>.
+Many thanks for publishing this icon as freeware.</p>
+<p>This plugin uses free applications icons from <a href="http://www.aha-soft.com/">Aha-Soft</a>.
+Many thanks for making these icons freely available.</p>
+<p>Many thanks to the community at the <a href="http://www.cmsimpleforum.com">CMSimple forum</a>
+for tips, suggestions and testing.</p>
+<p>And last but not least many thanks to <a href="http://www.harteg.dk">Peter Harteg</a>,
+the "father" of CMSimple, and all developers of
+<a href="http://www.cmsimple-xh.com">CMSimple_XH</a>
+without whom this amazing CMS wouldn't exist.</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+</div>
+
+</body>
+
+</html>
