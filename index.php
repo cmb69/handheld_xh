@@ -14,15 +14,18 @@ if (!defined('CMSIMPLE_XH_VERSION')) {
 }
 
 
-define('HANDHELD_VERSION', '1beta4');
+define('HANDHELD_VERSION', '1beta5');
 
 
 /**
  * Fully qualified absolute URL to CMSimple's root folder.
  */
-define('HANDHELD_URL',
-    'http://' . (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 's' : '')
-    . $_SERVER['SERVER_NAME'] . preg_replace('/index.php$/', '', $_SERVER['PHP_SELF']));
+if (!defined('CMSIMPLE_URL')) {
+    define('CMSIMPLE_URL', 'http'
+	. (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 's' : '')
+	. '://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT']
+	. preg_replace('/index.php$/', '', $_SERVER['PHP_SELF']));
+}
 
 
 /**
@@ -48,7 +51,7 @@ function Handheld_main()
 		array($file, $line), $ptx['error_redirect_details']);
 		$e .= '<li>' . $ptx['error_redirect_caption'] . tag('br') . $msg . '</li>';
 	    } else {
-		$url = $pcf['mode'] == 1 ? $pcf['destination'] : HANDHELD_URL . $pcf['subsite'] . '/';
+		$url = $pcf['mode'] == 1 ? $pcf['destination'] : CMSIMPLE_URL . $pcf['subsite'] . '/';
 		header('Location: ' . $url, true);
 		exit();
 	    }
