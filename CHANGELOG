@@ -1,3 +1,8 @@
+Version 1beta5 - released 2012-10-19
+cmb     updated to new mobile detection from 2012-10-18
+cmb     fixed relocation to work with HTTPS and non default port numbers
+cmb     improved manual slightly
+
 Version 1beta4 - released 2012-07-04
 cmb	changed: detection and redirection is done with PHP instead of JS
 cmb	added two alternative modes: redirect to sub-site, switch template instead of redirection

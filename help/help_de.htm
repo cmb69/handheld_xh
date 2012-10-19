@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta name="content-language" content="de">
+<title>Handheld_XH - Handbuch</title>
+<link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+
+<body>
+
+<h1>Handheld_XH - ein CMSimple_XH-Plugin</h1>
+<img src="../handheld.png" style="display:block; float:left; margin: 0 0 10px 0">
+<p style="text-align:justify">Handheld_XH ermöglicht die automatische Erkennung
+von mobilen Browsern (nicht Tablets), so dass Sie diesen eine optimierte Website
+durch Weiterleitung auf eine andere Website,
+oder einfach durch ein spezielles Template, präsentieren können.
+Das Plugin kann ebenfalls von anderen CMSimple_XH-Komponenten verwendet werden,
+die sich an mobile Browser anpassen möchten.</p>
+
+<ul id="nav">
+<li><a href="#notice">Wichtiger Hinweis</a></li>
+<li><a href="#requirements">Voraussetzungen</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#settings">Einstellungen</a></li>
+<li><a href="#usage">Verwendung</a>
+<ul><a href="#usage-api">API</a></ul></li>
+<!--<li><a href="#limitations">Limitations</a></li>-->
+<li><a href="#license">Lizenz</a></li>
+<li><a href="#credits">Danksagung</a></li>
+</ul>
+
+<div id="body">
+
+<p><strong>Bitte lesen Sie diese Dokumentation
+<em>bevor</em> sich Probleme ergeben!</strong></p>
+
+<h2><a name="notice">Wichtiger Hinweis</a></h2>
+<p><strong>Handheld_XH konnte bisher nicht in diversen Umgebungen getestet werden.
+Es ist eine so genannte BETA-Version. Vorsicht bei der Verwendung!</strong></p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="requirements">Voraussetzungen</a></h2>
+<p>Handheld_XH ist ein Plugin für CMSimple_XH.
+Es benötigt eine UTF-8 kodierte Version.</p>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<h2><a name="installation">Installation</a></h2>
+<p>Die Installation erfolgt wie bei vielen anderen CMSimple_XH-Plugins auch.
+Im <a href="http://www.cmsimple-xh.com/wiki/doku.php/de:installation">CMSimple_XH Wiki</a>
+finden sie ausführliche Hinweise.</p>
+<ol>
+<li><strong>Sichern Sie die Daten auf Ihrem Server.</strong></li>
+<li>Entpacken Sie die ZIP-Datei auf Ihrem Computer.</li>
+<li>Laden Sie das gesamte Verzeichnis handheld/ auf Ihren Server in das CMSimple_XH-Plugin-Verzeichnis hoch.</li>
+<li>Vergeben Sie falls nötig Schreibrechte für die Unterverzeichnisse config/ und languages/.</li>
+<li><strong>Gehen Sie zu "Handheld" im Administrationsbereich,
+und prüfen Sie, ob alle Voraussetzungen erfüllt sind.</strong></li>
+</ol>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<h2><a name="settings">Einstellungen</a></h2>
+<p>Die Konfiguration des Plugins erfolgt wie bei vielen anderen CMSimple_XH-Plugins auch
+im Administrationsbereich der Homepage. Wählen Sie unter "Plugins" "Handheld" aus.</p>
+<p>Sie können die Voreinstellungen von Handheld_XH in der Plugin-Konfiguration ändern.
+Beim Überfahren der Hilfe-Icons mit der Maus werden Hinweise zu den Einstellungen angezeigt.
+Weitere Details entnehmen Sie dem Abschnitt <a href="#usage">Verwendung</a>.</p>
+<p>Die Lokalisierung wird unter Plugin-Sprache vorgenommen.
+Sie können die Zeichenketten in Ihre eigene Sprache übersetzen,
+oder sie entsprechend Ihren Anforderungen anpassen.</p>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<h2><a name="usage">Verwendung</a></h2>
+<p>Handheld_XH kennt drei Modi:</p>
+<ol>
+<li><h4>Mobile Browser werden auf einer andere (Sub-)Domain weiter geleitet</h4>
+<p>Die bevorzugte Weise um eine für mobile Geräte optimierte Website zu präsentieren.
+Die (Sub-)Domain kann eine minimale CMSimple_XH-Installation (ohne Handheld_XH) sein,
+oder auch eine kleine handgemachte Website.</p></li>
+<li><h4>Mobile Browser werden auf eine CMSimple Subsite weiter geleitet</h4>
+<p>Eine Kompromisslösung: auf diese Weise können sie anderen Inhalt
+in einem anderen Template präsentieren, aber Plugins, die auf der mobilen Website
+nicht genutzt werden, <em>könnten</em> den Netzwerkverkehr erhöhen.</p></li>
+<li><h4>Mobilen Browsern wird ein anderes Template gezeigt</h4>
+<p>Vermutlich nicht die optimalste Lösung für mobile Geräte,
+aber so müssen Sie Inhalte nur einmal erstellen und aktuell halten.</p></li>
+</ol>
+<p>Wählen Sie den gewünschten Modus in der Konfiguration des Plugins,
+tragen Sie die entsprechende Einstellung ein und
+erstellen Sie die mobile Website bzw. das Template.
+Es ist eine bewährte Praktik den mobilen Browsern einen Link zur normalen Website anzubieten:</p>
+<pre class="code">&lt;a href="http://www.example.com/?&amp;handheld_full=1"&gt;normale Website (Cookies müssen akzeptiert werden)&lt;a&gt;</pre>
+<p>"handheld_full=1" setzt einen Cookie im Browser des Besuchers,
+so dass er auf der normalen Website navigieren kann ohne auf die mobile weiter geleitet zu werden.
+Auf der normalen Website setzen Sie dann einen Link zurück zur mobilen Version:</p>
+<pre class="code">&lt;a href="http://mobile.example.com/?&amp;handheld_full=0"&gt;mobile Version&lt;a&gt;</pre>
+<p>Nachdem alles eingerichtet wurde, sollten Sie es gründlich testen.
+Wenn Sie selbst über kein mobiles Gerät verfügen, gibt es verschiedene Möglichkeiten,
+z.B. den <a href="http://www.opera.com/developer/tools/mini/">Opera Mini Simulator</a>,
+das Firefox Addon <a href="https://addons.mozilla.org/de/firefox/addon/user-agent-switcher/">User Agent Switcher</a>
+und den <a href="http://de.opera.com/developer/tools/mobile/">Opera Mobile Emulator</a>.
+Abschließend können Sie ihre mobile Website mit dem <a href="http://validator.w3.org/mobile/">W3C mobileOK Checker</a> prüfen.</p>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<h3><a name="usage-api">API</a></h3>
+<p>Andere CMSimple_XH-Komponenten (Plugins/Templates/Addons)
+können die Browsererkennung von Handheld_XH nutzen,
+um sich an mobile Browser anzupassen:</p>
+<pre class="code">include_once $pth['folder']['plugins'].'handheld/handheld.inc.php';
+if (Handheld_detected()) {
+    // entsprechende Maßnahmen ergreifen
+}</pre>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<!--<h2><a name="limitations">Limitations</a></h2>
+<div class="toplink"><a href="#">back to top</a></div>
+-->
+<h2><a name="license">Lizenz</a></h2>
+<p>Handheld_XH kann unter Einhaltung der
+<a href="http://www.gnu.org/licenses/gpl.html">GPLv3</a> verwendet werden.</p>
+<p>&copy; 2011 Brett Allen<br>
+&copy; 2012 Christoph M. Becker</p>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+<h2><a name="credits">Danksagung</a></h2>
+<p>Handheld_XH verwendet die Mobil-Geräte-Erkennung von
+<a href="http://detectmobilebrowsers.com/">Detect Mobile Browsers</a>.
+Vielen Dank an Mktg Dept für die Veröffentlichung unter der "Unlicense".</p>
+<p>Das Plugin-Icon wurde von <a href="http://pierocksmysocks.deviantart.com/">pierocksmysocks</a> entworfen.
+Vielen Dank für die Veröffentlichung als Freeware.</p>
+<p>Dieses Plugin verwendet freie Anwendungs-Icons von
+<a href="http://www.aha-soft.com/">Aha-Soft</a>.
+Vielen Dank für das freie zur Verfügung stellen dieser Icons.</p>
+<p>Vielen Dank an die Community im <a href="http://www.cmsimpleforum.com">CMSimple-Forum</a>
+für Tipps, Vorschläge und Testen.</p>
+<p>Und zu guter Letzt vielen Dank an <a href="http://www.harteg.dk">Peter Harteg</a>,
+den "Vater" von CMSimple, und alle Entwickler von <a href="http://www.cmsimple-xh.com">CMSimple_XH</a>,
+ohne die dieses phantastische CMS nicht existieren würde.</p>
+<div class="toplink"><a href="#">zum Seitenanfang</a></div>
+
+</div>
+
+</body>
+
+</html>
