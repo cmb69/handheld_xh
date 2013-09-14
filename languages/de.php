@@ -14,5 +14,6 @@ $plugin_tx['handheld']['syscheck_extension']="Erweiterung '%s' geladen";
 $plugin_tx['handheld']['syscheck_encoding']="UTF-8-Kodierung eingestellt";
 $plugin_tx['handheld']['syscheck_magic_quotes']="magic_quotes_runtime off";
 $plugin_tx['handheld']['syscheck_writable']="Ordner '%s' beschreibbar";
+$plugin_tx['handheld']['about']="Über Handheld_XH";
 
 ?>

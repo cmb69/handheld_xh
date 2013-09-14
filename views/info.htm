@@ -1,6 +1,16 @@
 <!-- Handheld_XH: about view -->
-<h1><a href="http://3-magi.net/?CMSimple_XH/Handheld_XH">Handheld_XH</a></h1>
-<img src="<?php echo $this->iconPath();?>" style="float: left; margin: 0 0 10px 0"/>
+<h4><?php echo $this->l10n('syscheck_title');?></h4>
+<ul style="list-style: none">
+<?php foreach ($this->systemChecks() as $check => $state):?>
+    <li>
+        <img src="<?php echo $this->stateIconPath($state);?>" alt="<?php echo $state;?>"
+            style="margin: 0; height: 1em; padding-right: 1em"/>
+        <span><?php echo $check;?></span>
+    </li>
+<?php endforeach;?>
+</ul>
+<h4><?php echo $this->l10n('about');?></h4>
+<img src="<?php echo $this->iconPath();?>" style="float: left; margin: 0 0 10px 0" alt="Plugin Icon"/>
 <p>Version: <?php echo HANDHELD_VERSION;?></p>
 <p>Copyright &copy; 2011 <a href="http://www.videopoint.co.uk/">Brett Allen</a><br/>
 Copyright &copy; 2012-2013 <a href="http://3-magi.net/">Christoph M. Becker</a></p>

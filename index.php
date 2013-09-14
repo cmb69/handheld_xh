@@ -93,47 +93,6 @@ function Handheld_main()
     }
 }
 
-/**
- * Returns the requirements information view.
- *
- * @return string (X)HTML.
- */
-function Handheld_systemCheck() // RELEASE-TODO
-{
-    global $pth, $tx, $plugin_tx;
-
-    define('HANDHELD_PHP_VERSION', '4.0.7');
-    $ptx = $plugin_tx['handheld'];
-    $imgdir = $pth['folder']['plugins'] . 'handheld/images/';
-    $ok = tag('img src="' . $imgdir . 'ok.png" alt="ok"');
-    $warn = tag('img src="' . $imgdir . 'warn.png" alt="warning"');
-    $fail = tag('img src="' . $imgdir . 'fail.png" alt="failure"');
-    $o = '<h4>' . $ptx['syscheck_title'] . '</h4>'
-        . (version_compare(PHP_VERSION, HANDHELD_PHP_VERSION) >= 0 ? $ok : $fail)
-        . '&nbsp;&nbsp;' . sprintf($ptx['syscheck_phpversion'], HANDHELD_PHP_VERSION)
-        . tag('br') . "\n";
-    foreach (array('pcre') as $ext) {
-        $o .= (extension_loaded($ext) ? $ok : $fail)
-            . '&nbsp;&nbsp;' . sprintf($ptx['syscheck_extension'], $ext)
-            . tag('br') . "\n";
-    }
-    $o .= (!get_magic_quotes_runtime() ? $ok : $fail)
-        . '&nbsp;&nbsp;' . $ptx['syscheck_magic_quotes'] . tag('br') . tag('br')
-        . "\n";
-    $o .= (strtoupper($tx['meta']['codepage']) == 'UTF-8' ? $ok : $fail)
-        . '&nbsp;&nbsp;' . $ptx['syscheck_encoding'] . tag('br') . "\n";
-    $folders = array();
-    foreach (array('config/', 'languages/') as $folder) {
-        $folders[] = $pth['folder']['plugins'] . 'handheld/' . $folder;
-    }
-    foreach ($folders as $folder) {
-        $o .= (is_writable($folder) ? $ok : $warn)
-            . '&nbsp;&nbsp;' . sprintf($ptx['syscheck_writable'], $folder)
-            . tag('br') . "\n";
-    }
-    return $o;
-}
-
 $_Handheld = new Handheld_Controller();
 $_Handheld->dispatch();
 
