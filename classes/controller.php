@@ -184,7 +184,7 @@ class Handheld_Controller
         global $pth, $tx, $plugin_tx;
 
         $ptx = $plugin_tx['handheld'];
-        $phpVersion = '4.0.7';
+        $phpVersion = '4.3.10';
         $checks = array();
         $checks[sprintf($ptx['syscheck_phpversion'], $phpVersion)]
             = version_compare(PHP_VERSION, $phpVersion) >= 0 ? 'ok' : 'fail';
