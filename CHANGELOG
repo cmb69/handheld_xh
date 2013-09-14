@@ -1,3 +1,11 @@
+Version 1rc1 - released 2013-09-14
+cmb     updated to latest browser detection script (from 2013-09-03)
+cmb     added version.nfo
+cmb     added Czech localization and CTIMNE (contributed by oldnema)
+cmb     reviewed and updated manuals and README files
+cmb     refactored source code
+cmb     added Phing build.xml
+
 Version 1beta5 - released 2012-10-19
 cmb     updated to new mobile detection from 2012-10-18
 cmb     fixed relocation to work with HTTPS and non default port numbers
