@@ -49,17 +49,4 @@ if (!defined('CMSIMPLE_URL')) {
 $_Handheld = new Handheld_Controller();
 $_Handheld->dispatch();
 
-/*
- * Handle mobile browsers.
- */
-if ($plugin_cf['handheld']['mode'] && empty($_COOKIE['handheld_full'])
-    && ($plugin_cf['handheld']['mode'] != 2
-    || $sl != $plugin_cf['handheld']['subsite'])
-) {
-    include_once $pth['folder']['plugins'] . 'handheld/handheld.inc.php';
-    if (Handheld_detected()) {
-        $_Handheld->handleMobiles();
-    }
-}
-
 ?>

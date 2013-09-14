@@ -113,7 +113,7 @@ class Handheld_Controller
      *
      * @return string
      *
-     * @access public
+     * @access protected
      */
     function redirectError($file, $line)
     {
@@ -133,7 +133,7 @@ class Handheld_Controller
      *
      * @global array The configuration of the plugins.
      *
-     * @access public
+     * @access protected
      */
     function redirect()
     {
@@ -153,7 +153,7 @@ class Handheld_Controller
      * @global array The configuration of the core.
      * @global array The paths of system files and folders.
      *
-     * @access public
+     * @access protected
      */
     function switchTemplate($template)
     {
@@ -253,6 +253,8 @@ class Handheld_Controller
      *
      * @global string Error messages to display.
      * @global array  The configuration of the plugins.
+     *
+     * @access public
      */
     function handleMobiles()
     {
@@ -281,17 +283,29 @@ class Handheld_Controller
      *
      * @global bool   Whether the user is logged in as admin.
      * @global string Whether the plugin administration is requested.
+     * @global string The current language.
+     * @global array  The paths of system files and folders.
+     * @global array  The configuration of the plugins.
      *
      * @access public
      */
     function dispatch()
     {
-        global $adm, $handheld;
+        global $adm, $handheld, $sl, $pth, $plugin_cf;
 
+        $pcf = $plugin_cf['handheld'];
         if ($adm && isset($handheld) && $handheld == 'true') {
             $this->handleAdministration();
         } elseif (isset($_GET['handheld_full'])) {
             $this->overrideDetection();
+        }
+        if ($pcf['mode'] && empty($_COOKIE['handheld_full'])
+            && ($pcf['mode'] != 2 || $sl != $pcf['subsite'])
+        ) {
+            include_once $pth['folder']['plugins'] . 'handheld/handheld.inc.php';
+            if (Handheld_detected()) {
+                $this->handleMobiles();
+            }
         }
     }
 }
