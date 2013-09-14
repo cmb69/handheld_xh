@@ -31,7 +31,7 @@ require_once $pth['folder']['plugin_classes'] . 'controller.php';
 /**
  * The version string.
  */
-define('HANDHELD_VERSION', '1beta5');
+define('HANDHELD_VERSION', '@HANDHELD_VERSION@');
 
 /**
  * Fully qualified absolute URL to CMSimple's root folder.
