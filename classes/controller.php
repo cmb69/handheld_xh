@@ -93,7 +93,7 @@ class Handheld_Controller
         global $pth, $cf;
 
         $template = $pth['folder']['plugins'] . 'handheld/views/' . $template
-            . '.htm';
+            . '.php';
         $xhtml = $cf['xhtml']['endtags'];
         unset($pth, $cf);
         ob_start();
