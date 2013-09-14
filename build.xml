@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Handheld" default="none">
+
+    <fileset id="php-sources" dir=".">
+        <include name="*.php"/>
+    </fileset>
+
+    <target name="sniff">
+        <phpcodesniffer standard="PEAR">
+            <fileset refid="php-sources"/>
+        </phpcodesniffer>
+    </target>
+
+</project>
