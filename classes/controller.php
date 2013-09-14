@@ -47,16 +47,25 @@ class Handheld_Controller
      *
      * @return string (X)HTML.
      *
+     * @global array The paths of system files and folders.
+     * @global array The configuration of the core.
+     *
      * @access protected
      */
     function render($template)
     {
-        global $pth;
+        global $pth, $cf;
 
-        $template = $pth['folder']['plugins'] . 'handheld/views/' . $template . '.htm';
+        $template = $pth['folder']['plugins'] . 'handheld/views/' . $template
+            . '.htm';
+        $xhtml = $cf['xhtml']['endtags'];
+        unset($pth, $cf);
         ob_start();
         include $template;
         $o = ob_get_clean();
+        if (!$xhtml) {
+            $o = str_replace('/>', '>', $o);
+        }
         return $o;
     }
 
