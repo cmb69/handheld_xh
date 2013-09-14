@@ -142,7 +142,7 @@ class Handheld_Controller
         $pcf = $plugin_cf['handheld'];
         $url = $pcf['mode'] == 1
             ? $pcf['destination']
-            : CMSIMPLE_URL . $pcf['subsite'] . '/';
+            : HANDHELD_URL . $pcf['subsite'] . '/';
         header('Location: ' . $url, true);
         exit();
     }

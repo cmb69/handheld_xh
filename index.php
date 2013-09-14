@@ -36,15 +36,12 @@ define('HANDHELD_VERSION', '1beta5');
 /**
  * Fully qualified absolute URL to CMSimple's root folder.
  */
-if (!defined('CMSIMPLE_URL')) {
-    define(
-        'CMSIMPLE_URL',
-        'http'
-        . (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 's' : '')
-        . '://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT']
-        . preg_replace('/index.php$/', '', $_SERVER['PHP_SELF'])
-    );
-}
+define('HANDHELD_URL',
+    'http'
+    . (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 's' : '')
+    . '://' . $_SERVER['HTTP_HOST']
+    . preg_replace('/index.php$/', '', $sn)
+);
 
 $_Handheld = new Handheld_Controller();
 $_Handheld->dispatch();
