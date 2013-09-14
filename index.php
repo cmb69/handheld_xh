@@ -46,53 +46,6 @@ if (!defined('CMSIMPLE_URL')) {
     );
 }
 
-/**
- * Handles mobile browsers.
- *
- * @global array $cf
- * @global array $pth
- * @global string $e
- * @return void
- */
-function Handheld_main()
-{
-    global $pth, $cf, $e, $plugin_cf, $plugin_tx;
-
-    $pcf = $plugin_cf['handheld'];
-    $ptx = $plugin_tx['handheld'];
-    if (Handheld_detected()) {
-        switch ($pcf['mode']) {
-        case '1':
-        case '2':
-            if (headers_sent($file, $line)) {
-                $msg = str_replace(
-                    array('{file}', '{line}'), array($file, $line),
-                    $ptx['error_redirect_details']
-                );
-                $e .= '<li>' . $ptx['error_redirect_caption'] . tag('br') . $msg
-                    . '</li>';
-            } else {
-                $url = $pcf['mode'] == 1 ? $pcf['destination'] : CMSIMPLE_URL
-                    . $pcf['subsite'] . '/';
-                header('Location: ' . $url, true);
-                exit();
-            }
-            break;
-        case '3':
-            $cf['site']['template'] = $pcf['template'];
-            $pth['folder']['template'] = $pth['folder']['templates']
-                . $cf['site']['template'] . '/';
-            $pth['file']['template'] = $pth['folder']['template'] . 'template.htm';
-            $pth['file']['stylesheet'] = $pth['folder']['template']
-                . 'stylesheet.css';
-            $pth['folder']['menubuttons'] = $pth['folder']['template'] . 'menu/';
-            $pth['folder']['templateimages'] = $pth['folder']['template']
-                . 'images/';
-            break;
-        }
-    }
-}
-
 $_Handheld = new Handheld_Controller();
 $_Handheld->dispatch();
 
@@ -103,8 +56,10 @@ if ($plugin_cf['handheld']['mode'] && empty($_COOKIE['handheld_full'])
     && ($plugin_cf['handheld']['mode'] != 2
     || $sl != $plugin_cf['handheld']['subsite'])
 ) {
-    include_once $pth['folder']['plugins'].'handheld/handheld.inc.php';
-    Handheld_main();
+    include_once $pth['folder']['plugins'] . 'handheld/handheld.inc.php';
+    if (Handheld_detected()) {
+        $_Handheld->handleMobiles();
+    }
 }
 
 ?>

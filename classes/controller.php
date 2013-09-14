@@ -106,6 +106,69 @@ class Handheld_Controller
     }
 
     /**
+     * Returns an error notice that the redirection was not possible.
+     *
+     * @param string $file A file path.
+     * @param int    $line A line number.
+     *
+     * @return string
+     *
+     * @access public
+     */
+    function redirectError($file, $line)
+    {
+        $message = str_replace(
+            array('{file}', '{line}'), array($file, $line),
+            $this->l10n('error_redirect_details')
+        );
+        $o .= '<li>' . $this->l10n('error_redirect_caption') . tag('br')
+            . $message . '</li>' . PHP_EOL;
+        return $o;
+    }
+
+    /**
+     * Redirect according to configuration.
+     *
+     * @return void
+     *
+     * @global array The configuration of the plugins.
+     *
+     * @access public
+     */
+    function redirect()
+    {
+        global $plugin_cf;
+
+        $pcf = $plugin_cf['handheld'];
+        $url = $pcf['mode'] == 1
+            ? $pcf['destination']
+            : CMSIMPLE_URL . $pcf['subsite'] . '/';
+        header('Location: ' . $url, true);
+        exit();
+    }
+
+    /**
+     * Switches the template.
+     *
+     * @global array The configuration of the core.
+     * @global array The paths of system files and folders.
+     *
+     * @access public
+     */
+    function switchTemplate($template)
+    {
+        global $cf, $pth;
+
+        $cf['site']['template'] = $template;
+        $pth['folder']['template'] = $pth['folder']['templates']
+            . $cf['site']['template'] . '/';
+        $pth['file']['template'] = $pth['folder']['template'] . 'template.htm';
+        $pth['file']['stylesheet'] = $pth['folder']['template'] . 'stylesheet.css';
+        $pth['folder']['menubuttons'] = $pth['folder']['template'] . 'menu/';
+        $pth['folder']['templateimages'] = $pth['folder']['template'] . 'images/';
+    }
+
+    /**
      * Returns the system checks.
      *
      * @return array
@@ -181,6 +244,34 @@ class Handheld_Controller
     {
         setcookie('handheld_full', $_GET['handheld_full'], 0, CMSIMPLE_ROOT);
         $_COOKIE['handheld_full'] = $_GET['handheld_full'];
+    }
+
+    /**
+     * Handles mobile browsers.
+     *
+     * @return void
+     *
+     * @global string Error messages to display.
+     * @global array  The configuration of the plugins.
+     */
+    function handleMobiles()
+    {
+        global $e, $plugin_cf;
+
+        $pcf = $plugin_cf['handheld'];
+        switch ($pcf['mode']) {
+        case '1':
+        case '2':
+            if (headers_sent($file, $line)) {
+                $e = $this->redirectError($file, $line);
+            } else {
+                $this->redirect();
+            }
+            break;
+        case '3':
+            $this->switchTemplate($pcf['template']);
+            break;
+        }
     }
 
     /**
