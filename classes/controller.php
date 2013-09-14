@@ -81,6 +81,8 @@ class Handheld_Controller
     /**
      * Renders a template view.
      *
+     * @param string $template A name of a view template.
+     *
      * @return string (X)HTML.
      *
      * @global array The paths of system files and folders.
@@ -149,6 +151,10 @@ class Handheld_Controller
 
     /**
      * Switches the template.
+     *
+     * @param string $template A name of a CMSimple template.
+     *
+     * @return void
      *
      * @global array The configuration of the core.
      * @global array The paths of system files and folders.

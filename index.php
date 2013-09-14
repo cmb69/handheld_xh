@@ -36,7 +36,8 @@ define('HANDHELD_VERSION', '@HANDHELD_VERSION@');
 /**
  * Fully qualified absolute URL to CMSimple's root folder.
  */
-define('HANDHELD_URL',
+define(
+    'HANDHELD_URL',
     'http'
     . (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 's' : '')
     . '://' . $_SERVER['HTTP_HOST']
