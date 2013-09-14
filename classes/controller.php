@@ -11,7 +11,7 @@
  * @copyright 2011 Brett Allen <http://www.videopoint.co.uk/>
  * @copyright 2012-2013 Christoph M. Becker <http://3-magi.net/>
  * @license   http://www.gnu.org/licenses/gpl-3.0.en.html GNU GPLv3
- * @version   SVN: $Id: index.php 19 2013-09-14 11:53:41Z Chistoph Becker $
+ * @version   SVN: $Id$
  * @link      http://3-magi.net/?CMSimple_XH/Handheld_XH
  */
 
