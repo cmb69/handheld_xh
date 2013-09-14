@@ -94,48 +94,6 @@ function Handheld_main()
 }
 
 /**
- * Returns the plugin version information view.
- *
- * @return string (X)HTML.
- */
-function Handheld_version()
-{
-    global $pth;
-
-    $icon = tag(
-        'img src="' . $pth['folder']['plugins'] . 'handheld/handheld.png"'
-        . ' style="float: left; margin: 0 0 10px 0"'
-    );
-    return '<h1>'
-        . '<a href="http://3-magi.net/?CMSimple_XH/Handheld_XH">Handheld_XH</a>'
-        . '</h1>' . "\n"
-        . $icon
-        . '<p>Version: ' . HANDHELD_VERSION . '</p>' . "\n"
-        . '<p>Copyright &copy; 2011'
-        . ' <a href="http://www.videopoint.co.uk/">Brett Allen</a>' . tag('br')
-        . 'Copyright &copy; 2012-2013'
-        . ' <a href="http://3-magi.net/">Christoph M. Becker</a></p>' . "\n"
-        . '<p>Handheld_XH is powered by'
-        . ' <a href="http://detectmobilebrowsers.com/">Detect Mobile Browsers</a>.'
-        . '</p>'
-        . '<p style="text-align: justify; clear: both">'
-        . 'This program is free software: you can redistribute it and/or modify'
-        . ' it under the terms of the GNU General Public License as published by'
-        . ' the Free Software Foundation, either version 3 of the License, or'
-        . ' (at your option) any later version.</p>' . "\n"
-        . '<p style="text-align: justify; clear: both">'
-        . 'This program is distributed in the hope that it will be useful,'
-        . ' but WITHOUT ANY WARRANTY; without even the implied warranty of'
-        . ' MERCHAN&shy;TABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the'
-        . ' GNU General Public License for more details.</p>' . "\n"
-        . '<p style="text-align: justify; clear: both">'
-        . 'You should have received a copy of the GNU General Public License'
-        . ' along with this program.  If not, see'
-        . ' <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>'
-        . '.</p>' . "\n";
-}
-
-/**
  * Returns the requirements information view.
  *
  * @return string (X)HTML.

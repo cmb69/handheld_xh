@@ -27,6 +27,40 @@
 class Handheld_Controller
 {
     /**
+     * Returns the path of the plugin icon.
+     *
+     * @return string
+     *
+     * @global array The paths of system files and folders.
+     *
+     * @access protected
+     */
+    function iconPath()
+    {
+        global $pth;
+
+        return $pth['folder']['plugins'] . 'handheld/handheld.png';
+    }
+
+    /**
+     * Renders a template view.
+     *
+     * @return string (X)HTML.
+     *
+     * @access protected
+     */
+    function render($template)
+    {
+        global $pth;
+
+        $template = $pth['folder']['plugins'] . 'handheld/views/' . $template . '.htm';
+        ob_start();
+        include $template;
+        $o = ob_get_clean();
+        return $o;
+    }
+
+    /**
      * Handles the plugin administration.
      *
      * @return void
@@ -45,7 +79,7 @@ class Handheld_Controller
         $o .= print_plugin_admin('off');
         switch ($admin) {
         case '':
-            $o .= Handheld_version() . tag('hr') . Handheld_systemCheck();
+            $o .= $this->render('about') . tag('hr') . Handheld_systemCheck();
             break;
         default:
             $o .= plugin_admin_common($action, $admin, $plugin);
@@ -56,6 +90,8 @@ class Handheld_Controller
      * Overrides the mobile detection.
      *
      * @return void
+     *
+     * @access protected
      */
     function overrideDetection()
     {
