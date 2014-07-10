@@ -1,16 +1,16 @@
 <!-- Handheld_XH: about view -->
 <h1>Handheld</h1>
-<h4><?php echo $this->l10n('syscheck_title');?></h4>
+<h4><?php echo $this->_l10n('syscheck_title');?></h4>
 <ul class="handheld_syscheck">
-<?php foreach ($this->systemChecks() as $check => $state):?>
+<?php foreach ($this->_systemChecks() as $check => $state):?>
     <li>
-        <img src="<?php echo $this->stateIconPath($state);?>" alt="<?php echo $state;?>" />
+        <img src="<?php echo $this->_stateIconPath($state);?>" alt="<?php echo $state;?>" />
         <span><?php echo $check;?></span>
     </li>
 <?php endforeach;?>
 </ul>
-<h4><?php echo $this->l10n('about');?></h4>
-<img src="<?php echo $this->iconPath();?>" class="handheld_icon" alt="<?php echo $this->l10n('alt_icon');?>"/>
+<h4><?php echo $this->_l10n('about');?></h4>
+<img src="<?php echo $this->_iconPath();?>" class="handheld_icon" alt="<?php echo $this->_l10n('alt_icon');?>"/>
 <p>Version: <?php echo HANDHELD_VERSION;?></p>
 <p>Copyright &copy; 2011 <a href="http://www.videopoint.co.uk/" target="_blank">Brett Allen</a><br/>
 Copyright &copy; 2012-2014 <a href="http://3-magi.net/" target="_blank">Christoph M. Becker</a></p>
