@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -11,7 +10,7 @@
 <body>
 
 <h1>Handheld_XH - ein CMSimple_XH-Plugin</h1>
-<img src="../handheld.png" style="display:block; float:left; margin: 0 0 10px 0">
+<img src="../handheld.png" style="float:left; margin: 0 0 10px 0" alt="iPhone">
 <p style="text-align:justify">Handheld_XH ermöglicht die automatische Erkennung
 von mobilen Browsern (nicht Tablets), so dass Sie diesen eine optimierte Website
 durch Weiterleitung auf eine andere Website, oder einfach durch ein spezielles
@@ -25,7 +24,9 @@ möchten.</p>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#settings">Einstellungen</a></li>
 <li><a href="#usage">Verwendung</a>
-<ul><a href="#usage-api">API</a></ul></li>
+<ul>
+    <li><a href="#usage-api">API</a></li>
+</ul></li>
 <li><a href="#limitations">Einschränkungen</a></li>
 <li><a href="#license">Lizenz</a></li>
 <li><a href="#credits">Danksagung</a></li>
@@ -36,34 +37,34 @@ möchten.</p>
 <p><strong>Bitte lesen Sie diese Dokumentation <em>bevor</em> sich Probleme
 ergeben!</strong></p>
 
-<h2><a name="notice">Wichtiger Hinweis</a></h2>
+<h2 id="notice">Wichtiger Hinweis</h2>
 <p><strong>Handheld_XH konnte bisher nicht in diversen Umgebungen getestet
 werden. Es ist eine so genannter Release Candidate. Vorsicht bei der
 Verwendung!</strong></p>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
 
-<h2><a name="requirements">Voraussetzungen</a></h2>
+<h2 id="requirements">Voraussetzungen</h2>
 <p>Handheld_XH ist ein Plugin für CMSimple_XH. Es benötigt eine UTF-8 kodierte
 Version.</p>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
 
-<h2><a name="installation">Installation</a></h2>
+<h2 id="installation">Installation</h2>
 <p>Die Installation erfolgt wie bei vielen anderen CMSimple_XH-Plugins auch. Im
 <a href="http://www.cmsimple-xh.org/wiki/doku.php/de:installation">CMSimple_XH
 Wiki</a> finden sie ausführliche Hinweise.</p>
 <ol>
-<li><strong>Sichern Sie die Daten auf Ihrem Server.</strong></li>
+<li>Sichern Sie die Daten auf Ihrem Server.</li>
 <li>Entpacken Sie die ZIP-Datei auf Ihrem Computer.</li>
 <li>Laden Sie das gesamte Verzeichnis handheld/ auf Ihren Server in das
 CMSimple_XH-Plugin-Verzeichnis hoch.</li>
 <li>Vergeben Sie falls nötig Schreibrechte für die Unterverzeichnisse config/
 und languages/.</li>
-<li><strong>Gehen Sie zu "Handheld" im Administrationsbereich, und prüfen Sie,
-ob alle Voraussetzungen erfüllt sind.</strong></li>
+<li>Gehen Sie zu "Handheld" im Administrationsbereich, und prüfen Sie, ob alle
+Voraussetzungen erfüllt sind.</li>
 </ol>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
 
-<h2><a name="settings">Einstellungen</a></h2>
+<h2 id="settings">Einstellungen</h2>
 <p>Die Konfiguration des Plugins erfolgt wie bei vielen anderen
 CMSimple_XH-Plugins auch im Administrationsbereich der Homepage. Wählen Sie
 unter "Plugins" "Handheld" aus.</p>
@@ -76,7 +77,7 @@ Zeichenketten in Ihre eigene Sprache übersetzen, oder sie entsprechend Ihren
 Anforderungen anpassen.</p>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
 
-<h2><a name="usage">Verwendung</a></h2>
+<h2 id="usage">Verwendung</h2>
 <p>Handheld_XH kennt drei Modi:</p>
 <ol>
 <li><h4>Mobile Browser werden auf einer andere (Sub-)Domain weiter geleitet</h4>
@@ -116,7 +117,7 @@ Abschließend können Sie ihre mobile Website mit dem <a
 href="http://validator.w3.org/mobile/">W3C mobileOK Checker</a> prüfen.</p>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
 
-<h3><a name="usage-api">API</a></h3>
+<h3 id="usage-api">API</h3>
 <p>Andere CMSimple_XH-Komponenten (Plugins/Templates/Addons) können die
 Browsererkennung von Handheld_XH nutzen, um sich an mobile Browser
 anzupassen:</p>
@@ -126,7 +127,7 @@ if (Handheld_detected()) {
 }</pre>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
 
-<h2><a name="limitations">Einschränkungen</a></h2>
+<h2 id="limitations">Einschränkungen</h2>
 <ul>
 <li>Die Erkennung mobiler Browser beruht auf dem <a
 href="http://de.wikipedia.org/wiki/User_Agent">User Agent String</a> der vom
@@ -136,7 +137,7 @@ könnte.</li>
 </ul>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
 
-<h2><a name="license">Lizenz</a></h2>
+<h2 id="license">Lizenz</h2>
 <p>Handheld_XH kann unter Einhaltung der
 <a href="http://www.gnu.org/licenses/gpl.html">GPLv3</a> verwendet werden.</p>
 <p>&copy; 2011 Brett Allen<br>
@@ -146,7 +147,7 @@ Russische Übersetzung &copy; 2012 Lubomyr Kydray<br>
 Tschechische Übersetzung und CTIMNE &copy; 2012 Josef Němec</p>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
 
-<h2><a name="credits">Danksagung</a></h2>
+<h2 id="credits">Danksagung</h2>
 <p>Handheld_XH verwendet die Mobil-Geräte-Erkennung von
 <a href="http://detectmobilebrowsers.com/">Detect Mobile Browsers</a>.
 Vielen Dank an Mktg Dept für die Veröffentlichung unter der "Unlicense".</p>

@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,7 +10,7 @@
 <body>
 
 <h1>Handheld_XH - a CMSimple_XH Plugin</h1>
-<img src="../handheld.png" style="display:block; float:left; margin: 0 0 10px 0">
+<img src="../handheld.png" style="float: left; margin: 0 0 10px 0" alt="iPhone">
 <p style="text-align:justify">Handheld_XH facilitates automatic detection of
 mobile browsers (not tablet browsers), so you can present them a mobile friendly
 website by either redirecting them to another site or by simply switching to a
@@ -24,7 +23,9 @@ which want to adapt to mobile browsers.</p>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#settings">Settings</a></li>
 <li><a href="#usage">Usage</a>
-<ul><a href="#usage-api">API</a></ul></li>
+<ul>
+    <li><a href="#usage-api">API</a></li>
+</ul></li>
 <li><a href="#limitations">Limitations</a></li>
 <li><a href="#license">License</a></li>
 <li><a href="#credits">Credits</a></li>
@@ -35,32 +36,32 @@ which want to adapt to mobile browsers.</p>
 <p><strong>Please do read this documentation <em>before</em> you encounter any
 problems!</strong></p>
 
-<h2><a name="notice">Important Notice</a></h2>
+<h2 id="notice">Important Notice</h2>
 <p><strong>Handheld_XH couldn't be tested so far in various environments. It is
 a so called release candidate. Use with caution!</strong></p>
 <div class="toplink"><a href="#">back to top</a></div>
 
-<h2><a name="requirements">Requirements</a></h2>
+<h2 id="requirements">Requirements</h2>
 <p>Handheld_XH is a plugin for CMSimple_XH. It requires a UTF-8 encoded
 version.</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
-<h2><a name="installation">Installation</a></h2>
+<h2 id="installation">Installation</h2>
 <p>The installation is done as with many other CMSimple_XH plugins. See the <a
 href="http://www.cmsimple-xh.org/wiki/doku.php/installation"> CMSimple_XH
 wiki</a> for further details.</p>
 <ol>
-<li><strong>Backup the data on your server.</strong></li>
+<li>Backup the data on your server.</li>
 <li>Unzip the distribution on your computer.</li>
 <li>Upload the whole directory handheld/ to your server into CMSimple_XH's
 plugins directory.</li>
 <li>Set write permissions to the subdirectories config/ and languages/.</li>
-<li><strong>Switch to "Handheld" in the back-end to check if all requirements
-are fulfilled.</strong></li>
+<li>Switch to "Handheld" in the back-end to check if all requirements are
+fulfilled.</li>
 </ol>
 <div class="toplink"><a href="#">back to top</a></div>
 
-<h2><a name="settings">Settings</a></h2>
+<h2 id="settings">Settings</h2>
 <p>The plugin's configuration is done as with many other CMSimple_XH plugins in
 the website's back-end. Select "Handheld" from "Plugins".</p>
 <p>You have to change the default settings of Handheld_XH in "Config". Hints for
@@ -70,7 +71,7 @@ See section <a href="#usage">Usage</a> for details.</p>
 to your own language, or customize them according to your needs.</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
-<h2><a name="usage">Usage</a></h2>
+<h2 id="usage">Usage</h2>
 <p>Handheld_XH has three modes:</p>
 <ol>
 <li><h4>Redirect mobile browsers to another (sub)domain</h4>
@@ -103,12 +104,12 @@ href="http://www.opera.com/developer/opera-mini-simulator">Opera Mini
 Simulator</a>, the Firefox Addon <a
 href="https://addons.mozilla.org/de/firefox/addon/user-agent-switcher/">User
 Agent Switcher</a> and the <a
-href="http://www.opera.com/developer/mobile-emulator">Opera Mobile Emulator</a>.
-Finally you can check your site with the <a
+href="http://www.opera.com/developer/mobile-emulator">Opera Mobile Classic
+Emulator</a>. Finally you can check your site with the <a
 href="http://validator.w3.org/mobile/">W3C mobileOK Checker</a>.</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
-<h3><a name="usage-api">API</a></h3>
+<h3 id="usage-api">API</h3>
 <p>Other CMSimple_XH components (plugins/templates/addons) can use the browser
 detection of Handheld_XH to adapt for mobile browsers:</p>
 <pre class="code">include_once $pth['folder']['plugins'].'handheld/handheld.inc.php';
@@ -117,7 +118,7 @@ if (Handheld_detected()) {
 }</pre>
 <div class="toplink"><a href="#">back to top</a></div>
 
-<h2><a name="limitations">Limitations</a></h2>
+<h2 id="limitations">Limitations</h2>
 <ul>
 <li>The mobile browser detection relies on the <a
 href="http://en.wikipedia.org/wiki/User_agent_string#User_agent_identification">user
@@ -127,7 +128,7 @@ device.</li>
 </ul>
 <div class="toplink"><a href="#">back to top</a></div>
 
-<h2><a name="license">License</a></h2>
+<h2 id="license">License</h2>
 <p>Handheld_XH is licensed under
 <a href="http://www.gnu.org/licenses/gpl.html">GPLv3</a>.</p>
 <p>&copy; 2011 Brett Allen<br>
@@ -137,7 +138,7 @@ Russian translation &copy; 2012 Lubomyr Kydray<br>
 Czech translation and CTIMNE &copy; 2012 Josef Němec</p>
 <div class="toplink"><a href="#">back to top</a></div>
 
-<h2><a name="credits">Credits</a></h2>
+<h2 id="credits">Credits</h2>
 <p>Handheld_XH is powered by <a href="http://detectmobilebrowsers.com/">Detect
 Mobile Browsers</a>. Many thanks to Mktg Dept for publishing the mobile
 detection regex under the Unlicense.</p>
