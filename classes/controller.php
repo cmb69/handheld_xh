@@ -146,7 +146,7 @@ class Handheld_Controller
             ? $pcf['destination']
             : HANDHELD_URL . $pcf['subsite'] . '/';
         header('Location: ' . $url, true);
-        exit();
+        XH_exit();
     }
 
     /**

@@ -44,6 +44,23 @@ define(
     . preg_replace('/index.php$/', '', $sn)
 );
 
+if (!function_exists('XH_exit')) {
+    /**
+     * Exists the script. Required for mocking.
+     *
+     * @return void
+     */
+    function XH_exit()
+    {
+        exit;
+    }
+}
+
+/**
+ * The plugin controller.
+ *
+ * @var Handheld_Controller
+ */
 $_Handheld = new Handheld_Controller();
 $_Handheld->dispatch();
 

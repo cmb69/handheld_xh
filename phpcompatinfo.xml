@@ -9,10 +9,10 @@
                consoleProgress="false"
                verbose="false">
 
-    <!--<excludes>
+    <excludes>
         <exclude id="handheld">
             <directory name="test"/>
             <directory name="vendor"/>
         </exclude>
-    </excludes>-->
+    </excludes>
 </phpcompatinfo>
