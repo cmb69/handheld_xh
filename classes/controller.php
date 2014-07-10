@@ -158,7 +158,7 @@ class Handheld_Controller
      * @global array The configuration of the plugins.
      * @global array The paths of system files and folders.
      *
-     * @access protected
+     * @access public
      */
     function switchTemplate()
     {
@@ -219,14 +219,13 @@ class Handheld_Controller
      *
      * @global string The value of the "admin" GET or POST parameter.
      * @global string The value of the "action" GET or POST parameter.
-     * @global string The name of the plugin.
      * @global string The (X)HTML to be placed in the contents area.
      *
      * @access protected
      */
     function handleAdministration()
     {
-        global $admin, $action, $plugin, $o;
+        global $admin, $action, $o;
 
         $o .= print_plugin_admin('off');
         switch ($admin) {
@@ -234,7 +233,7 @@ class Handheld_Controller
             $o .= $this->render('info');
             break;
         default:
-            $o .= plugin_admin_common($action, $admin, $plugin);
+            $o .= plugin_admin_common($action, $admin, 'handheld');
         }
     }
 

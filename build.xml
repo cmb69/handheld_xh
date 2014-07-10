@@ -16,11 +16,16 @@
         <include name="classes/*.php"/>
     </fileset>
 
+    <fileset id="unit-tests" dir="tests/unit">
+        <include name="*Test.php"/>
+    </fileset>
+
     <!-- Checks -->
 
     <target name="sniff">
         <phpcodesniffer standard="PEAR" format="full">
             <fileset refid="php-sources"/>
+            <fileset refid="unit-tests"/>
         </phpcodesniffer>
     </target>
 
@@ -28,6 +33,21 @@
         <exec command="phpcompatinfo --configuration phpcompatinfo.xml print
                                      --exclude-pattern handheld ."
               logoutput="true"/>
+    </target>
+
+    <!-- Tests -->
+
+    <target name="unit-tests">
+        <phpunit haltonerror="true" haltonfailure="true">
+            <formatter type="plain" usefile="false"/>
+            <batchtest>
+                <fileset refid="unit-tests"/>
+            </batchtest>
+        </phpunit>
+    </target>
+
+    <target name="coverage">
+        <exec command="phpunit --configuration coverage.xml" logoutput="true"/>
     </target>
 
     <!-- Documentation -->

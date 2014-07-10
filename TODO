@@ -2,3 +2,6 @@
 * remove RC hint from manuals
 * unit tests
 * check HANDHELD_URL
+* rename classes/controller.php to classes/Presentation.php
+* add stylesheet and remove inline styles from views/info.php
+* alt text to language files
