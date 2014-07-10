@@ -1,3 +1,4 @@
 * document that mode 2 is obsolete since XH 1.6
 * remove RC hint from manuals
-* phing
+* unit tests
+* check HANDHELD_URL
