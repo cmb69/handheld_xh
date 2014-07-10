@@ -1,0 +1,19 @@
+/*
+ * Back-end
+ */
+.handheld_syscheck {
+    list-style: none;
+    padding-left: 0;
+}
+.handheld_syscheck img {
+    margin: 0;
+    height: 1em;
+    padding-right: 1em;
+}
+.handheld_icon {
+    float: left;
+    margin: 0 0 16px 0;
+}
+.handheld_license {
+    text-align: justify;
+}
