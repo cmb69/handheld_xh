@@ -59,9 +59,18 @@ class InfoViewTest extends PHPUnit_Framework_TestCase
         $pth = array(
             'folder' => array('plugins' => '../')
         );
-        //$plugin_tx = array(
-        //    'handheld' => array('alt_icon' => 'iPhone')
-        //);
+        $plugin_tx = array(
+            'handheld' => array(
+                'alt_icon' => 'iPhone',
+                'about' => '',
+                'syscheck_title' => '',
+                'syscheck_phpversion' => '',
+                'syscheck_extension' => '',
+                'syscheck_encoding' => '',
+                'syscheck_magic_quotes' => '',
+                'syscheck_writable' => ''
+            )
+        );
         $this->_subject = new Handheld_Controller();
         $printPluginAdmin = new PHPUnit_Extensions_MockFunction(
             'print_plugin_admin', $this->_subject

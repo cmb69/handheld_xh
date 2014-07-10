@@ -11,7 +11,7 @@
 <?php endforeach;?>
 </ul>
 <h4><?php echo $this->l10n('about');?></h4>
-<img src="<?php echo $this->iconPath();?>" class="handheld_icon" style="float: left; margin: 0 0 10px 0" alt="iPhone"/>
+<img src="<?php echo $this->iconPath();?>" class="handheld_icon" style="float: left; margin: 0 0 10px 0" alt="<?php echo $this->l10n('alt_icon');?>"/>
 <p>Version: <?php echo HANDHELD_VERSION;?></p>
 <p>Copyright &copy; 2011 <a href="http://www.videopoint.co.uk/" target="_blank">Brett Allen</a><br/>
 Copyright &copy; 2012-2014 <a href="http://3-magi.net/" target="_blank">Christoph M. Becker</a></p>
