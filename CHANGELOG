@@ -1,28 +1,37 @@
+Version 1rc2 - released 2014-07-11
+* fixed bug, where page specific templates overwrote handheld templates
+  (solution works only for CMSimple_XH 1.6+) (reported by samecity)
+* added plugin stylesheet
+* added support for integrated plugin menu
+* added metaconfig.php
+* revised manuals
+* improved QA
+
 Version 1rc1 - released 2013-09-14
-cmb     updated to latest browser detection script (from 2013-09-03)
-cmb     added version.nfo
-cmb     added Czech localization and CTIMNE (contributed by oldnema)
-cmb     reviewed and updated manuals and README files
-cmb     refactored source code
-cmb     added Phing build.xml
+* updated to latest browser detection script (from 2013-09-03)
+* added version.nfo
+* added Czech localization and CTIMNE (contributed by oldnema)
+* reviewed and updated manuals and README files
+* refactored source code
+* added Phing build.xml
 
 Version 1beta5 - released 2012-10-19
-cmb     updated to new mobile detection from 2012-10-18
-cmb     fixed relocation to work with HTTPS and non default port numbers
-cmb     updated English manual
-cmb     added German manual
-cmb     added German translation
-cmb     added Slovak and Russian Translation (contributed by Tata resp. Old)
+* updated to new mobile detection from 2012-10-18
+* fixed relocation to work with HTTPS and non default port numbers
+* updated English manual
+* added German manual
+* added German translation
+* added Slovak and Russian Translation (contributed by Tata resp. Old)
 
 Version 1beta4 - released 2012-07-04
-cmb	changed: detection and redirection is done with PHP instead of JS
-cmb	added two alternative modes: redirect to sub-site, switch template instead of redirection
-cmb	added README, LICENSE and CHANGELOG
-cmb	added system check
-cmb	added manual
+* changed: detection and redirection is done with PHP instead of JS
+* added two alternative modes: redirect to sub-site, switch template instead of redirection
+* added README, LICENSE and CHANGELOG
+* added system check
+* added manual
 
 Version 1beta3 - 2011-09-02
-bca	fixed bug: inclusion of jQuery4CMSimple didn't work in all circumstances
+* fixed bug: inclusion of jQuery4CMSimple didn't work in all circumstances
 
 Version 1beta2 - released 2011-08-22
-bca	initial release
+* initial release
