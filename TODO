@@ -1,5 +1,6 @@
-* document that mode 2 is obsolete since XH 1.6
+* document responsive templates
 * check HANDHELD_URL
 * what if mobile template is missing?
+* register plugin menu items
 
 * remove RC hint from manuals

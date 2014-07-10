@@ -80,32 +80,36 @@ Anforderungen anpassen.</p>
 <h2 id="usage">Verwendung</h2>
 <p>Handheld_XH kennt drei Modi:</p>
 <ol>
-<li><h4>Mobile Browser werden auf einer andere (Sub-)Domain weiter geleitet</h4>
+<li>
+<h4>Mobile Browser werden auf einer andere (Sub-)Domain weiter geleitet</h4>
 <p>Die bevorzugte Weise um eine für mobile Geräte optimierte Website zu
 präsentieren. Die (Sub-)Domain kann eine minimale CMSimple_XH-Installation (ohne
-Handheld_XH) sein, oder auch eine kleine handgemachte Website.</p></li>
-<li><h4>Mobile Browser werden auf eine CMSimple Subsite weiter geleitet</h4>
+Handheld_XH) sein, oder auch eine kleine handgemachte Website.</p>
+</li>
+<li>
+<h4>Mobile Browser werden auf eine CMSimple Subsite weiter geleitet</h4>
 <p>Eine Kompromisslösung: auf diese Weise können sie anderen Inhalt in einem
 anderen Template präsentieren, aber Plugins, die auf der mobilen Website nicht
-genutzt werden, <em>könnten</em> den Netzwerkverkehr erhöhen.</p></li>
-<li><h4>Mobilen Browsern wird ein anderes Template gezeigt</h4>
+genutzt werden, <em>könnten</em> den Netzwerkverkehr erhöhen.</p>
+<p>In CMSimple_XH 1.6 wurde das fragwürdige Subsite Feature entfernt, so dass
+dieser Modus hinfällig ist.</p>
+</li>
+<li>
+<h4>Mobilen Browsern wird ein anderes Template gezeigt</h4>
 <p>Vermutlich nicht die optimalste Lösung für mobile Geräte, aber so müssen Sie
-Inhalte nur einmal erstellen und aktuell halten.</p></li>
+Inhalte nur einmal erstellen und aktuell halten.</p>
+</li>
 </ol>
 <p>Wählen Sie den gewünschten Modus in der Konfiguration des Plugins, tragen Sie
 die entsprechende Einstellung ein und erstellen Sie die mobile Website bzw. das
 Template. Es ist eine bewährte Praktik den mobilen Browsern einen Link zur
 normalen Website anzubieten:</p>
-<pre class="code">&lt;a
-href="http://www.example.com/?&amp;amp;handheld_full=1"&gt;normale Website (Cookies
-müssen akzeptiert werden)&lt;a&gt;</pre>
+<pre class="code">&lt;a href="http://www.example.com/?&amp;amp;handheld_full=1"&gt;normale Website (Cookies müssen akzeptiert werden)&lt;a&gt;</pre>
 <p>"handheld_full=1" setzt einen Cookie im Browser des Besuchers, so dass er auf
 der normalen Website navigieren kann ohne auf die mobile weiter geleitet zu
 werden. Auf der normalen Website setzen Sie dann einen Link zurück zur mobilen
 Version:</p>
-<pre class="code">&lt;a
-href="http://mobile.example.com/?&amp;amp;handheld_full=0"&gt;mobile
-Version&lt;a&gt;</pre>
+<pre class="code">&lt;a href="http://mobile.example.com/?&amp;amp;handheld_full=0"&gt;mobile Version&lt;a&gt;</pre>
 <p>Nachdem alles eingerichtet wurde, sollten Sie es gründlich testen. Wenn Sie
 selbst über kein mobiles Gerät verfügen, gibt es verschiedene Möglichkeiten,
 z.B. den <a href="http://www.opera.com/de/developer/opera-mini-simulator">Opera
