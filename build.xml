@@ -30,6 +30,20 @@
               logoutput="true"/>
     </target>
 
+    <!-- Documentation -->
+
+    <target name="php-doc">
+        <phpdoc title="Handheld_XH Developer Documentation" destdir="doc/php"
+                output="HTML:Smarty:HandS" defaultpackagename="Handheld"
+                defaultcategoryname="CMSimple_XH">
+            <fileset refid="php-sources"/>
+            <projdocfileset dir=".">
+               <include name="README"/>
+               <include name="CHANGELOG"/>
+            </projdocfileset>
+        </phpdoc>
+    </target>
+
     <target name="build">
         <fail unless="version" message="version is not defined!"/>
         <svnexport revision="" repositoryurl="." todir="dist"/>
