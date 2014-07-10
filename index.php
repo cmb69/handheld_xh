@@ -24,9 +24,9 @@ if (!defined('CMSIMPLE_XH_VERSION')) {
 }
 
 /**
- * The controller class.
+ * The presentation layer.
  */
-require_once $pth['folder']['plugin_classes'] . 'controller.php';
+require_once $pth['folder']['plugin_classes'] . 'Presentation.php';
 
 /**
  * The version string.

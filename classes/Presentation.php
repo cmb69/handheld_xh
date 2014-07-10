@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Controller of Handheld_XH
+ * The presentation layer.
  *
  * PHP versions 4 and 5
  *
@@ -16,7 +16,7 @@
  */
 
 /**
- * The controller class.
+ * The controllers.
  *
  * @category CMSimple_XH
  * @package  Handheld
