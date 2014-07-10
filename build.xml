@@ -85,8 +85,11 @@
         <move todir="dist">
             <fileset dir="export">
                 <exclude name="build.xml"/>
+                <exclude name="composer.*"/>
+                <exclude name="coverage.xml"/>
                 <exclude name="handheld.komodoproject"/>
                 <exclude name="phpcompatinfo.xml"/>
+                <exclude name="tests/**"/>
                 <exclude name="TODO"/>
             </fileset>
         </move>
