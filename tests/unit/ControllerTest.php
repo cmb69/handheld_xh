@@ -45,6 +45,9 @@ class ControllerTest extends PHPUnit_Framework_TestCase
     {
         include_once './handheld.inc.php';
         $this->_subject = new Handheld_Controller();
+        $rspmi = new PHPUnit_Extensions_MockFunction(
+            'XH_registerStandardPluginMenuItems', $this->_subject
+        );
         $handheldDetected = new PHPUnit_Extensions_MockFunction(
             'Handheld_detected', $this->_subject
         );

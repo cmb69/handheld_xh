@@ -72,6 +72,9 @@ class InfoViewTest extends PHPUnit_Framework_TestCase
             )
         );
         $this->_subject = new Handheld_Controller();
+        $rspmi = new PHPUnit_Extensions_MockFunction(
+            'XH_registerStandardPluginMenuItems', $this->_subject
+        );
         $printPluginAdmin = new PHPUnit_Extensions_MockFunction(
             'print_plugin_admin', $this->_subject
         );

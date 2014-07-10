@@ -43,6 +43,9 @@ class Handheld_Controller
     {
         global $adm, $handheld, $sl, $pth, $plugin_cf;
 
+        if ($adm && function_exists('XH_registerStandardPluginMenuItems')) {
+            XH_registerStandardPluginMenuItems('off');
+        }
         $pcf = $plugin_cf['handheld'];
         if ($adm && isset($handheld) && $handheld == 'true') {
             $this->_handleAdministration();

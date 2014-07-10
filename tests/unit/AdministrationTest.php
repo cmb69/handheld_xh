@@ -48,6 +48,10 @@ class AdministrationTest extends PHPUnit_Framework_TestCase
         $admin = 'plugin_stylesheet';
         $action = 'plugin_text';
         $subject = new Handheld_Controller();
+        $rspmi = new PHPUnit_Extensions_MockFunction(
+            'XH_registerStandardPluginMenuItems', $subject
+        );
+        $rspmi->expects($this->once());
         $printPluginAdmin = new PHPUnit_Extensions_MockFunction(
             'print_plugin_admin', $subject
         );
