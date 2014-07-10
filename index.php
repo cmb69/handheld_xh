@@ -33,16 +33,17 @@ require_once $pth['folder']['plugin_classes'] . 'Presentation.php';
  */
 define('HANDHELD_VERSION', '@HANDHELD_VERSION@');
 
-/**
- * Fully qualified absolute URL to CMSimple's root folder.
- */
-define(
-    'HANDHELD_URL',
-    'http'
-    . (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 's' : '')
-    . '://' . $_SERVER['HTTP_HOST']
-    . preg_replace('/index.php$/', '', $sn)
-);
+if (!defined('CMSIMPLE_URL')) {
+    /**
+     * The fully qualified absolute URL of the installation.
+     */
+    define(
+        'CMSIMPLE_URL',
+        'http'
+        . (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 's' : '')
+        . '://' . $_SERVER['HTTP_HOST'] . $sn
+    );
+}
 
 if (!function_exists('XH_exit')) {
     /**

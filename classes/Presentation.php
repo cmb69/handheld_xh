@@ -206,7 +206,7 @@ class Handheld_Controller
     }
 
     /**
-     * Redirect according to configuration.
+     * Redirects according to configuration.
      *
      * @return void
      *
@@ -219,9 +219,12 @@ class Handheld_Controller
         global $plugin_cf;
 
         $pcf = $plugin_cf['handheld'];
-        $url = $pcf['mode'] == 1
-            ? $pcf['destination']
-            : HANDHELD_URL . $pcf['subsite'] . '/';
+        if ($pcf['mode'] == 1) {
+            $url = $pcf['destination'];
+        } else {
+            $url = preg_replace('/index.php$/', '', CMSIMPLE_URL)
+                . $pcf['subsite'] . '/';
+        }
         header('Location: ' . $url, true);
         XH_exit();
     }
