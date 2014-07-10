@@ -4,11 +4,19 @@
 
 <project name="Handheld" default="none">
 
+    <!-- Properties -->
+
+    <property name="styledir" value="C:\xampp\php\data\phing\etc"/>
+
+    <!-- Filesets -->
+
     <fileset id="php-sources" dir=".">
         <include name="index.php"/>
         <include name="handheld.inc.php"/>
         <include name="classes/*.php"/>
     </fileset>
+
+    <!-- Checks -->
 
     <target name="sniff">
         <phpcodesniffer standard="PEAR" format="full">
@@ -17,7 +25,8 @@
     </target>
 
     <target name="compat">
-        <exec command="pci --dir . --tab 12,12,20 --summarize"
+        <exec command="phpcompatinfo --configuration phpcompatinfo.xml print
+                                     --exclude-pattern handheld ."
               logoutput="true"/>
     </target>
 
