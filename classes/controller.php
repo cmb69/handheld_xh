@@ -157,15 +157,16 @@ class Handheld_Controller
      * @return void
      *
      * @global array The configuration of the core.
+     * @global array The configuration of the plugins.
      * @global array The paths of system files and folders.
      *
      * @access protected
      */
-    function switchTemplate($template)
+    function switchTemplate()
     {
-        global $cf, $pth;
+        global $cf, $plugin_cf, $pth;
 
-        $cf['site']['template'] = $template;
+        $cf['site']['template'] = $plugin_cf['handheld']['template'];
         $pth['folder']['template'] = $pth['folder']['templates']
             . $cf['site']['template'] . '/';
         $pth['file']['template'] = $pth['folder']['template'] . 'template.htm';
@@ -277,7 +278,11 @@ class Handheld_Controller
             }
             break;
         case '3':
-            $this->switchTemplate($pcf['template']);
+            if (function_exists('XH_afterPluginLoading')) {
+                XH_afterPluginLoading(array($this, 'switchTemplate'));
+            } else {
+                $this->switchTemplate();
+            }
             break;
         }
     }
