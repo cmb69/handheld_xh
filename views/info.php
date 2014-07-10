@@ -13,7 +13,7 @@
 <img src="<?php echo $this->iconPath();?>" style="float: left; margin: 0 0 10px 0" alt="Plugin Icon"/>
 <p>Version: <?php echo HANDHELD_VERSION;?></p>
 <p>Copyright &copy; 2011 <a href="http://www.videopoint.co.uk/">Brett Allen</a><br/>
-Copyright &copy; 2012-2013 <a href="http://3-magi.net/">Christoph M. Becker</a></p>
+Copyright &copy; 2012-2014 <a href="http://3-magi.net/">Christoph M. Becker</a></p>
 <p>Handheld_XH is powered by <a href="http://detectmobilebrowsers.com/">Detect
 Mobile Browsers</a></p>
 <p style="text-align: justify">This program is free software: you can
