@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- $Id$ -->
+
 <project name="Handheld" default="none">
 
     <fileset id="php-sources" dir=".">
-        <include name="*.php"/>
+        <include name="index.php"/>
+        <include name="handheld.inc.php"/>
         <include name="classes/*.php"/>
     </fileset>
 
     <target name="sniff">
-        <phpcodesniffer standard="PEAR">
+        <phpcodesniffer standard="PEAR" format="full">
             <fileset refid="php-sources"/>
         </phpcodesniffer>
     </target>

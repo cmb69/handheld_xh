@@ -152,8 +152,6 @@ class Handheld_Controller
     /**
      * Switches the template.
      *
-     * @param string $template A name of a CMSimple template.
-     *
      * @return void
      *
      * @global array The configuration of the core.
