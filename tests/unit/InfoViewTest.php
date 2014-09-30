@@ -92,7 +92,7 @@ class InfoViewTest extends PHPUnit_Framework_TestCase
     {
         global $o;
 
-        $this->assertTag(
+        @$this->assertTag(
             array(
                 'tag' => 'h1',
                 'content' => 'Handheld'
@@ -112,7 +112,7 @@ class InfoViewTest extends PHPUnit_Framework_TestCase
     {
         global $o;
 
-        $this->assertTag(
+        @$this->assertTag(
             array(
                 'tag' => 'img',
                 'attributes' => array(
@@ -136,7 +136,7 @@ class InfoViewTest extends PHPUnit_Framework_TestCase
     {
         global $o;
 
-        $this->assertTag(
+        @$this->assertTag(
             array(
                 'tag' => 'p',
                 'content' => 'Version: ' . HANDHELD_VERSION
@@ -156,7 +156,7 @@ class InfoViewTest extends PHPUnit_Framework_TestCase
     {
         global $o;
 
-        $this->assertTag(
+        @$this->assertTag(
             array(
                 'tag' => 'p',
                 'content' => "Copyright \xC2\xA9 2012-2014",
@@ -184,7 +184,7 @@ class InfoViewTest extends PHPUnit_Framework_TestCase
     {
         global $o;
 
-        $this->assertTag(
+        @$this->assertTag(
             array(
                 'tag' => 'p',
                 'attributes' => array('class' => 'handheld_license'),
