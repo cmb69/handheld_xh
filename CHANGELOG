@@ -1,3 +1,6 @@
+Version 1.0 - released 2014-09-30
+* updated to latest browser detection script (2014-08-01)
+
 Version 1.0rc2 - released 2014-07-11
 * fixed bug, where page specific templates overwrote handheld templates
   (solution works only for CMSimple_XH 1.6+) (reported by samecity)
