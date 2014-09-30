@@ -18,7 +18,6 @@ special template. The plugin can also be used by other CMSimple_XH components,
 which want to adapt to mobile browsers.</p>
 
 <ul id="nav">
-<li><a href="#notice">Important Notice</a></li>
 <li><a href="#requirements">Requirements</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#settings">Settings</a></li>
@@ -36,17 +35,15 @@ which want to adapt to mobile browsers.</p>
 <p><strong>Please do read this documentation <em>before</em> you encounter any
 problems!</strong></p>
 
-<h2 id="notice">Important Notice</h2>
-<p><strong>Handheld_XH couldn't be tested so far in various environments. It is
-a so called release candidate. Use with caution!</strong></p>
-<div class="toplink"><a href="#">back to top</a></div>
-
-<h2 id="requirements">Requirements</h2>
+<section id="requirements">
+<h2>Requirements</h2>
 <p>Handheld_XH is a plugin for CMSimple_XH. It requires a UTF-8 encoded
 version.</p>
 <div class="toplink"><a href="#">back to top</a></div>
+</section>
 
-<h2 id="installation">Installation</h2>
+<section id="installation">
+<h2>Installation</h2>
 <p>The installation is done as with many other CMSimple_XH plugins. See the <a
 href="http://www.cmsimple-xh.org/wiki/doku.php/installation"> CMSimple_XH
 wiki</a> for further details.</p>
@@ -61,26 +58,31 @@ languages/.</li>
 fulfilled.</li>
 </ol>
 <div class="toplink"><a href="#">back to top</a></div>
+</section>
 
-<h2 id="settings">Settings</h2>
+<section id="settings">
+<h2>Settings</h2>
 <p>The plugin's configuration is done as with many other CMSimple_XH plugins in
 the website's back-end. Select "Handheld" from "Plugins".</p>
 <p>You have to change the default settings of Handheld_XH under "Config". Hints
 for the options will be displayed when hovering over the help icon with your
 mouse. See section <a href="#usage">Usage</a> for details.</p>
 <p>Localization is done under "Language". You can translate the character
-strings to your own language, or customize them according to your needs.</p>
+strings to your own language (if there is no appropriate language file
+available), or customize them according to your needs.</p>
 <p>The look of Handheld_XH can be customized under "Stylesheet".</p>
 <div class="toplink"><a href="#">back to top</a></div>
+</section>
 
-<h2 id="usage">Usage</h2>
+<section id="usage">
+<h2>Usage</h2>
 <p>Handheld_XH has three modes:</p>
 <ol>
 <li>
 <h4>Redirect mobile browsers to another (sub)domain</h4>
 <p>The preferred way to present a really mobile optimized website. The
-(sub)domain can be a minimal CMSimple_XH installation (without Handheld_XH) or
-even a small handcrafted website.</p>
+(sub)domain can be a minimal CMSimple_XH installation or even a small
+handcrafted website.</p>
 </li>
 <li>
 <h4>Redirect mobile browsers to a CMSimple subsite</h4>
@@ -115,17 +117,21 @@ href="http://www.opera.com/developer/mobile-emulator">Opera Mobile Classic
 Emulator</a>. Finally you can check your site with the <a
 href="http://validator.w3.org/mobile/">W3C mobileOK Checker</a>.</p>
 <div class="toplink"><a href="#">back to top</a></div>
+</section>
 
-<h3 id="usage-api">API</h3>
+<section id="usage-api">
+<h3>API</h3>
 <p>Other CMSimple_XH components (plugins/templates/addons) can use the browser
 detection of Handheld_XH to adapt for mobile browsers:</p>
-<pre class="code">include_once $pth['folder']['plugins'].'handheld/handheld.inc.php';
+<pre class="code">include_once $pth['folder']['plugins'] . 'handheld/handheld.inc.php';
 if (Handheld_detected()) {
     // take appropriate actions
 }</pre>
 <div class="toplink"><a href="#">back to top</a></div>
+</section>
 
-<h2 id="limitations">Limitations</h2>
+<section id="limitations">
+<h2>Limitations</h2>
 <p>The mobile browser detection relies on the <a
 href="http://en.wikipedia.org/wiki/User_agent_string#User_agent_identification">user
 agent string</a> that is sent by the browser. This information is not absolutely
@@ -133,10 +139,12 @@ reliable as it might have been changed by the vendor or the owner of the mobile
 device.</p>
 <p>In CMSimple_XH before 1.6 in mode 3 the mobile template might not work on
 pages where a page specific template is defined. This cannot be solved
-conveniently, so an upgrade to CMSimple_XH 1.6 is recommended.</p>
+appropriately, so an upgrade to CMSimple_XH 1.6 is recommended.</p>
 <div class="toplink"><a href="#">back to top</a></div>
+</section>
 
-<h2 id="license">License</h2>
+<section id="license">
+<h2>License</h2>
 <p>Handheld_XH is licensed under
 <a href="http://www.gnu.org/licenses/gpl.html">GPLv3</a>.</p>
 <p>&copy; 2011 Brett Allen<br>
@@ -145,8 +153,10 @@ conveniently, so an upgrade to CMSimple_XH 1.6 is recommended.</p>
 Russian translation &copy; 2012 Lubomyr Kydray<br>
 Czech translation and CTIMNE &copy; 2012 Josef Němec</p>
 <div class="toplink"><a href="#">back to top</a></div>
+</section>
 
-<h2 id="credits">Credits</h2>
+<section id="credits">
+<h2>Credits</h2>
 <p>Handheld_XH is powered by <a href="http://detectmobilebrowsers.com/">Detect
 Mobile Browsers</a>. Many thanks to Mktg Dept for publishing the mobile
 detection regex under the Unlicense.</p>
@@ -164,6 +174,7 @@ Harteg</a>, the "father" of CMSimple, and all developers of <a
 href="http://www.cmsimple-xh.org/">CMSimple_XH</a> without whom this amazing CMS
 wouldn't exist.</p>
 <div class="toplink"><a href="#">back to top</a></div>
+</section>
 
 </div>
 

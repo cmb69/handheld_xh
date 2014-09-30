@@ -19,7 +19,6 @@ CMSimple_XH-Komponenten verwendet werden, die sich an mobile Browser anpassen
 möchten.</p>
 
 <ul id="nav">
-<li><a href="#notice">Wichtiger Hinweis</a></li>
 <li><a href="#requirements">Voraussetzungen</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#settings">Einstellungen</a></li>
@@ -37,18 +36,15 @@ möchten.</p>
 <p><strong>Bitte lesen Sie diese Dokumentation <em>bevor</em> sich Probleme
 ergeben!</strong></p>
 
-<h2 id="notice">Wichtiger Hinweis</h2>
-<p><strong>Handheld_XH konnte bisher nicht in diversen Umgebungen getestet
-werden. Es ist eine so genannter Release Candidate. Vorsicht bei der
-Verwendung!</strong></p>
-<div class="toplink"><a href="#">zum Seitenanfang</a></div>
-
-<h2 id="requirements">Voraussetzungen</h2>
+<section id="requirements">
+<h2>Voraussetzungen</h2>
 <p>Handheld_XH ist ein Plugin für CMSimple_XH. Es benötigt eine UTF-8 kodierte
 Version.</p>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
+</section>
 
-<h2 id="installation">Installation</h2>
+<section id="installation">
+<h2>Installation</h2>
 <p>Die Installation erfolgt wie bei vielen anderen CMSimple_XH-Plugins auch. Im
 <a href="http://www.cmsimple-xh.org/wiki/doku.php/de:installation">CMSimple_XH
 Wiki</a> finden sie ausführliche Hinweise.</p>
@@ -63,29 +59,34 @@ css/ und languages/.</li>
 Voraussetzungen erfüllt sind.</li>
 </ol>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
+</section>
 
-<h2 id="settings">Einstellungen</h2>
+<section id="settings">
+<h2>Einstellungen</h2>
 <p>Die Konfiguration des Plugins erfolgt wie bei vielen anderen
 CMSimple_XH-Plugins auch im Administrationsbereich der Homepage. Wählen Sie
-unter "Plugins" "Handheld" aus.</p>
+Plugins &rarr; Handheld.</p>
 <p>Sie können die Voreinstellungen von Handheld_XH in der "Konfiguration"
 ändern. Beim Überfahren der Hilfe-Icons mit der Maus werden Hinweise zu den
 Einstellungen angezeigt. Weitere Details entnehmen Sie dem Abschnitt <a
 href="#usage">Verwendung</a>.</p>
 <p>Die Lokalisierung wird unter "Sprache" vorgenommen. Sie können die
-Zeichenketten in Ihre eigene Sprache übersetzen, oder sie entsprechend Ihren
-Anforderungen anpassen.</p>
+Zeichenketten in Ihre eigene Sprache übersetzen (falls keine entsprechende
+Sprachdatei zur Verfügung steht), oder sie entsprechend Ihren Anforderungen
+anpassen.</p>
 <p>Das Aussehen von Handheld_XH kann unter "Stylesheet" angepasst werden.</p>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
+</section>
 
-<h2 id="usage">Verwendung</h2>
+<section id="usage">
+<h2>Verwendung</h2>
 <p>Handheld_XH kennt drei Modi:</p>
 <ol>
 <li>
-<h4>Mobile Browser werden auf einer andere (Sub-)Domain weiter geleitet</h4>
+<h4>Mobile Browser werden auf eine andere (Sub-)Domain weiter geleitet</h4>
 <p>Die bevorzugte Weise um eine für mobile Geräte optimierte Website zu
-präsentieren. Die (Sub-)Domain kann eine minimale CMSimple_XH-Installation (ohne
-Handheld_XH) sein, oder auch eine kleine handgemachte Website.</p>
+präsentieren. Die (Sub-)Domain kann eine minimale CMSimple_XH-Installation sein,
+oder auch eine kleine handgemachte Website.</p>
 </li>
 <li>
 <h4>Mobile Browser werden auf eine CMSimple Subsite weiter geleitet</h4>
@@ -122,18 +123,22 @@ href="http://www.opera.com/de/developer/mobile-emulator">Opera Mobile Emulator</
 Abschließend können Sie ihre mobile Website mit dem <a
 href="http://validator.w3.org/mobile/">W3C mobileOK Checker</a> prüfen.</p>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
+</section>
 
-<h3 id="usage-api">API</h3>
+<section id="usage-api">
+<h3>API</h3>
 <p>Andere CMSimple_XH-Komponenten (Plugins/Templates/Addons) können die
 Browsererkennung von Handheld_XH nutzen, um sich an mobile Browser
 anzupassen:</p>
-<pre class="code">include_once $pth['folder']['plugins'].'handheld/handheld.inc.php';
+<pre class="code">include_once $pth['folder']['plugins'] . 'handheld/handheld.inc.php';
 if (Handheld_detected()) {
     // entsprechende Maßnahmen ergreifen
 }</pre>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
+</section>
 
-<h2 id="limitations">Einschränkungen</h2>
+<section id="limitations">
+<h2>Einschränkungen</h2>
 <p>Die Erkennung mobiler Browser beruht auf dem <a
 href="http://de.wikipedia.org/wiki/User_Agent">User Agent String</a> der vom
 Browser gesendet wird. Diese Information ist nicht absolut verlässlich, da sie
@@ -144,8 +149,10 @@ mobile Template nicht angezeigt wird, wenn bereits ein seitenspezifisches
 Template definiert ist. Dieses Problem kann nicht in geeigneter Weise gelöst
 werden, so dass ein Upgrade auf CMSimple_XH 1.6 empfohlen wird.</p>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
+</section>
 
-<h2 id="license">Lizenz</h2>
+<section id="license">
+<h2>Lizenz</h2>
 <p>Handheld_XH kann unter Einhaltung der
 <a href="http://www.gnu.org/licenses/gpl.html">GPLv3</a> verwendet werden.</p>
 <p>&copy; 2011 Brett Allen<br>
@@ -154,8 +161,10 @@ werden, so dass ein Upgrade auf CMSimple_XH 1.6 empfohlen wird.</p>
 Russische Übersetzung &copy; 2012 Lubomyr Kydray<br>
 Tschechische Übersetzung und CTIMNE &copy; 2012 Josef Němec</p>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
+</section>
 
-<h2 id="credits">Danksagung</h2>
+<section id="credits">
+<h2>Danksagung</h2>
 <p>Handheld_XH verwendet die Mobil-Geräte-Erkennung von
 <a href="http://detectmobilebrowsers.com/">Detect Mobile Browsers</a>.
 Vielen Dank an Mktg Dept für die Veröffentlichung unter der "Unlicense".</p>
@@ -170,6 +179,7 @@ für Tipps, Vorschläge und Testen.</p>
 den "Vater" von CMSimple, und alle Entwickler von <a href="http://www.cmsimple-xh.org/de/">CMSimple_XH</a>,
 ohne die dieses phantastische CMS nicht existieren würde.</p>
 <div class="toplink"><a href="#">zum Seitenanfang</a></div>
+</section>
 
 </div>
 
