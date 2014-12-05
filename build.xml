@@ -81,7 +81,6 @@
                 <exclude name="build.xml"/>
                 <exclude name="composer.*"/>
                 <exclude name="coverage.xml"/>
-                <exclude name="handheld.komodoproject"/>
                 <exclude name="phpcompatinfo.*"/>
                 <exclude name="tests/**"/>
                 <exclude name="TODO"/>
